@@ -8,6 +8,7 @@ public class Hammurabi {
     Scanner scanner = new Scanner(System.in);
 
     public static void main(String [] args) {
+
         new Hammurabi().playGame();
     }
 
@@ -23,18 +24,25 @@ public class Hammurabi {
         int grainStorage;
         int bushelUsedAsSeed;
         int year;
+        printSummary();
     }
 
     //Methods to be used in the playGame method
     int askHowManyAcresToBuy(int price, int bushels){
-        return 0;
+        int acresToBuyResponse = getNumber("How many acres to buy?: ");
+        int bushelsNeeded = acresToBuyResponse * price;
+        int i = (bushelsNeeded < bushels) ? acresToBuyResponse : 0;
+        return i;
     }
 
     int askHowManyAcresToSell(int acresOwned){
-        return 0;
+        int acresToSellResponse = getNumber("How many acres to sell?: ");
+        int i = (acresToSellResponse < acresOwned) ? acresToSellResponse : 0;
+        return i;
     }
 
     int askHowMuchGrainToFeedPeople(int bushels){
+
         return 0;
     }
 
@@ -62,8 +70,17 @@ public class Hammurabi {
     int newCostOfLand(){
         return 0;
     }
-    void printSummary(){
 
+    void printSummary(){
+        System.out.println("O great Hammurabi!\n" +
+                "You are in year 1 of your ten year rule.\n" +
+                "In the previous year 0 people starved to death.\n" +
+                "In the previous year 5 people entered the kingdom.\n" +
+                "The population is now 100.\n" +
+                "We harvested 3000 bushels at 3 bushels per acre.\n" +
+                "Rats destroyed 200 bushels, leaving 2800 bushels in storage.\n" +
+                "The city owns 1000 acres of land.\n" +
+                "Land is currently worth 19 bushels per acre.");
     }
     void finalSummary(){
 
@@ -90,4 +107,6 @@ public class Hammurabi {
         }
     }
 
+    public int harvest(int i) {
+     return 0;}
 }
